@@ -1,0 +1,39 @@
+<!-- links to other views -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#">home</a></li>
+  <li><a href="/pages/about">about</a></li>
+  <li><a href="/pages/contact">contact</a></li>
+</ul>
+
+<div class="container">
+  <br>
+  <p>this is the home page!</p>
+
+  <!-- rendered as HTML -->
+  <p><%= "execute and output ruby code" %></p>
+
+  <%# never rendered as HTML %>
+  <p><% "execute ruby code only" %></p>
+
+  <%# test access to PagesController %>
+  <p><%= PagesController.test %></p>
+
+  <%# test access to SampleGem %>
+  <p><%= SampleGem::StringAppender.string_append("test") %></p>
+
+  <%# used ruby to generate form to generate authenticity_token and enable CSRF protection %>
+  <%= form_tag("/pages/home", method: "post") do %>
+    <label>type here:</label>
+    <input type="text" name="string">
+    <input type="submit" value="append">
+  </form>
+  <% end %>
+
+  <h2>
+    <%# blank? is a rails method not in regular ruby %>
+    <%# unless x == if !(x) %>
+    <% unless @o_string.blank? %>
+      <%= @o_string.string_append %>
+    <% end %>    
+  </h2>
+</div>

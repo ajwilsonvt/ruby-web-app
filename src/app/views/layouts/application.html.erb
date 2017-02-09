@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>string appender</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>string appender</h1>
+    </div>
+    
+    <%= yield %>
+  </body>
+</html>
+
+<!--
+skeleton rails app that launches to localhost:3000/ is created with the following
+command in the console: `rails new <app-name>`
+
+app can be launched immediately with the following command in the console:
+`rails s` or `rails server`
+
+use config/routes.rb to assign pages to URLs
+
+this command in the console: `rails g controller Pages about home contact`
+tells rails to generate a controller called Pages, then generate three connected
+views called about, home, and contact
+
+1. set index page in config/routes.rb
+2. use your custom gem
+3. deploy to AWS using heroku
+-->
