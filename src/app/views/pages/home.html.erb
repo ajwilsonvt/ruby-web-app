@@ -28,11 +28,5 @@
     <input type="submit" value="append">
   <% end %>
 
-  <h2>
-    <%# blank? is a rails method not in regular ruby %>
-    <%# unless x == if !(x) %>
-    <% unless @o_string.blank? %>
-      <%= @o_string.string_append %>
-    <% end %>    
-  </h2>
+  <h2><%= @a_string %></h2>
 </div>
